@@ -12,5 +12,11 @@ namespace CommonBlogging.Enum
             Moderator = 2,
             User=3
         }
+
+        public enum Status
+        {
+            Active = 1,
+            Deactive = 2
+        }
     }
 }

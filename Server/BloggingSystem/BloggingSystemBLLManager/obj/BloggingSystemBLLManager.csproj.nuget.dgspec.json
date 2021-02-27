@@ -89,8 +89,144 @@
             "projectReferences": {
               "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystem.DTO\\BloggingSystem.DTO.csproj": {
                 "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystem.DTO\\BloggingSystem.DTO.csproj"
+              },
+              "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj": {
+                "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj"
+              },
+              "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj": {
+                "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj"
               }
             }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj",
+        "projectName": "BloggingSystemDatabase",
+        "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystem.DTO\\BloggingSystem.DTO.csproj": {
+                "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystem.DTO\\BloggingSystem.DTO.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj",
+        "projectName": "CommonBlogging",
+        "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
           }
         },
         "warningProperties": {

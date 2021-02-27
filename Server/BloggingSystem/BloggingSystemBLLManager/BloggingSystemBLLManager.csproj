@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\BloggingSystem.DTO\BloggingSystem.DTO.csproj" />
+    <ProjectReference Include="..\BloggingSystemDatabase\BloggingSystemDatabase.csproj" />
+    <ProjectReference Include="..\CommonBlogging\CommonBlogging.csproj" />
   </ItemGroup>
 
 </Project>
