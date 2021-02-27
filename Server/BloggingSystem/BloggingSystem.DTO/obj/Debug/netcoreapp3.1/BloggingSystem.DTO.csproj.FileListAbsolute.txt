@@ -1,0 +1,12 @@
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.deps.json
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\obj\Debug\netcoreapp3.1\BloggingSystem.DTO.csprojAssemblyReference.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\obj\Debug\netcoreapp3.1\BloggingSystem.DTO.AssemblyInfoInputs.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\obj\Debug\netcoreapp3.1\BloggingSystem.DTO.AssemblyInfo.cs
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\obj\Debug\netcoreapp3.1\BloggingSystem.DTO.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\obj\Debug\netcoreapp3.1\BloggingSystem.DTO.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.runtimeconfig.json
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.runtimeconfig.dev.json
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\obj\Debug\netcoreapp3.1\BloggingSystem.DTO.csproj.CoreCompileInputs.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystem.DTO\obj\Debug\netcoreapp3.1\BloggingSystem.DTO.genruntimeconfig.cache

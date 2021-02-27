@@ -1,0 +1,15 @@
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\bin\Debug\netcoreapp3.1\BloggingSystemDatabase.deps.json
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\bin\Debug\netcoreapp3.1\BloggingSystemDatabase.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\obj\Debug\netcoreapp3.1\BloggingSystemDatabase.csprojAssemblyReference.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\obj\Debug\netcoreapp3.1\BloggingSystemDatabase.AssemblyInfoInputs.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\obj\Debug\netcoreapp3.1\BloggingSystemDatabase.AssemblyInfo.cs
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\bin\Debug\netcoreapp3.1\BloggingSystemDatabase.runtimeconfig.json
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\bin\Debug\netcoreapp3.1\BloggingSystemDatabase.runtimeconfig.dev.json
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\bin\Debug\netcoreapp3.1\BloggingSystemDatabase.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\obj\Debug\netcoreapp3.1\BloggingSystemDatabase.csproj.CopyComplete
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\obj\Debug\netcoreapp3.1\BloggingSystemDatabase.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\obj\Debug\netcoreapp3.1\BloggingSystemDatabase.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\obj\Debug\netcoreapp3.1\BloggingSystemDatabase.genruntimeconfig.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemDatabase\obj\Debug\netcoreapp3.1\BloggingSystemDatabase.csproj.CoreCompileInputs.cache
