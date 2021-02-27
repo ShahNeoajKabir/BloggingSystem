@@ -1,0 +1,9 @@
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\BloggingSystemBLLManager.deps.json
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\BloggingSystemBLLManager.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\BloggingSystemBLLManager.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.csprojAssemblyReference.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.AssemblyInfoInputs.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.AssemblyInfo.cs
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.csproj.CoreCompileInputs.cache
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.pdb
