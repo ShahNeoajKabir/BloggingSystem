@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CommonBlogging;
+using BloggingSystem.DTO.View_Model;
+using CommonBlogging.Utility;
 
 namespace BloggingSystemBLLManager
 {
@@ -25,7 +27,7 @@ namespace BloggingSystemBLLManager
             {
                 var check = _bloggingSystemDb.User.Where(p => p.Email == user.Email && p.MobileNo == user.MobileNo).FirstOrDefaultAsync();
 
-                if(user.UserName!=null && user.Email!=null && user.Password !=null && user.MobileNo !=null && user.Age >0 && user.Image != null)
+                if(user.UserName!=null && user.Email!=null && user.Password !=null && user.MobileNo !=null && user.Age >17 && user.Image != null)
                 {
                     if (check != null)
                     {
@@ -35,6 +37,7 @@ namespace BloggingSystemBLLManager
                     {
                         user.CreatedDate = DateTime.Now;
                         user.CreatedBy = "Bappy";
+                        user.Password = new Encryptionservice().Encrypt(user.Password);
                         await _bloggingSystemDb.User.AddAsync(user);
                         var result = await _bloggingSystemDb.SaveChangesAsync();
                         if (result > 0)
@@ -60,6 +63,8 @@ namespace BloggingSystemBLLManager
                 throw new Exception("Try Again");
             }
         }
+
+       
 
         public async Task<bool> DeleteUser(User user)
         {
@@ -149,6 +154,46 @@ namespace BloggingSystemBLLManager
                 throw;
             }
         }
+        public async Task<bool> ChangePassword(VMChangePassword vMChangePassword)
+        {
+            bool res = false;
+            try
+            {
+                vMChangePassword.OldPassword = new Encryptionservice().Encrypt(vMChangePassword.OldPassword);
+                vMChangePassword.NewPassword = new Encryptionservice().Encrypt(vMChangePassword.NewPassword);
+                vMChangePassword.RetypePassword = new Encryptionservice().Encrypt(vMChangePassword.RetypePassword);
+
+                var check = await _bloggingSystemDb.User.Where(p => p.UserId == vMChangePassword.VMUserId && p.Email == vMChangePassword.Email && p.Password == vMChangePassword.OldPassword).FirstOrDefaultAsync();
+                if (check != null)
+                {
+                    if(vMChangePassword.NewPassword==vMChangePassword.RetypePassword && vMChangePassword.NewPassword != vMChangePassword.OldPassword)
+                    {
+                        check.Password = vMChangePassword.NewPassword;
+                        check.UpdatedDate = DateTime.Now;
+                        check.UpdatedBy = check.UserName;
+
+                        _bloggingSystemDb.User.Update(check);
+                        var count=_bloggingSystemDb.SaveChanges();
+                        if (count > 0)
+                        {
+                            res = true;
+                        }
+                        
+                    }
+                    else
+                    {
+                        throw new Exception("Something Is Wrong");
+                    }
+                }
+
+                return res;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Something Is Wrong");
+            }
+        }
     }
 
 
@@ -161,5 +206,6 @@ namespace BloggingSystemBLLManager
         Task<bool> UpdateUser(User user);
         Task<User> GetById(int id);
         Task<bool> DeleteUser(User user);
+        Task<bool> ChangePassword(VMChangePassword vMChangePassword);
     }
 }
