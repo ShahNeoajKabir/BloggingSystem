@@ -3,3 +3,7 @@ E:\Blogging System Demo\Server\BloggingSystem\CommonBlogging\bin\Debug\netcoreap
 E:\Blogging System Demo\Server\BloggingSystem\CommonBlogging\obj\Debug\netcoreapp3.1\CommonBlogging.csprojAssemblyReference.cache
 E:\Blogging System Demo\Server\BloggingSystem\CommonBlogging\obj\Debug\netcoreapp3.1\CommonBlogging.AssemblyInfoInputs.cache
 E:\Blogging System Demo\Server\BloggingSystem\CommonBlogging\obj\Debug\netcoreapp3.1\CommonBlogging.AssemblyInfo.cs
+E:\Blogging System Demo\Server\BloggingSystem\CommonBlogging\bin\Debug\netcoreapp3.1\CommonBlogging.pdb
+E:\Blogging System Demo\Server\BloggingSystem\CommonBlogging\obj\Debug\netcoreapp3.1\CommonBlogging.csproj.CoreCompileInputs.cache
+E:\Blogging System Demo\Server\BloggingSystem\CommonBlogging\obj\Debug\netcoreapp3.1\CommonBlogging.dll
+E:\Blogging System Demo\Server\BloggingSystem\CommonBlogging\obj\Debug\netcoreapp3.1\CommonBlogging.pdb

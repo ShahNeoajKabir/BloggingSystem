@@ -64,6 +64,68 @@
         }
       }
     },
+    "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemBLLManager\\BloggingSystemBLLManager.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemBLLManager\\BloggingSystemBLLManager.csproj",
+        "projectName": "BloggingSystemBLLManager",
+        "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemBLLManager\\BloggingSystemBLLManager.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemBLLManager\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystem.DTO\\BloggingSystem.DTO.csproj": {
+                "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystem.DTO\\BloggingSystem.DTO.csproj"
+              },
+              "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj": {
+                "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj"
+              },
+              "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj": {
+                "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -142,6 +204,64 @@
         }
       }
     },
+    "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj",
+        "projectName": "CommonBlogging",
+        "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.406\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "E:\\Blogging System Demo\\Server\\BloggingSystem\\Service.BloggingSystem\\Service.BloggingSystem.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -165,8 +285,14 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
+              "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemBLLManager\\BloggingSystemBLLManager.csproj": {
+                "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemBLLManager\\BloggingSystemBLLManager.csproj"
+              },
               "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj": {
                 "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\BloggingSystemDatabase\\BloggingSystemDatabase.csproj"
+              },
+              "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj": {
+                "projectPath": "E:\\Blogging System Demo\\Server\\BloggingSystem\\CommonBlogging\\CommonBlogging.csproj"
               }
             }
           }
@@ -180,6 +306,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[3.1.12, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

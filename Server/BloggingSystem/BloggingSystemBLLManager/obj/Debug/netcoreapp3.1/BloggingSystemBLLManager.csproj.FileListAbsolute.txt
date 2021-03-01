@@ -7,3 +7,10 @@ E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug
 E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.csproj.CoreCompileInputs.cache
 E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.dll
 E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\BloggingSystemDatabase.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\CommonBlogging.dll
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\BloggingSystem.DTO.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\BloggingSystemDatabase.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\bin\Debug\netcoreapp3.1\CommonBlogging.pdb
+E:\Blogging System Demo\Server\BloggingSystem\BloggingSystemBLLManager\obj\Debug\netcoreapp3.1\BloggingSystemBLLManager.csproj.CopyComplete

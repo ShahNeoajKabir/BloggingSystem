@@ -65,3 +65,10 @@ E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\n
 E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
 E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\obj\Debug\netcoreapp3.1\Service.BloggingSystem.csproj.CoreCompileInputs.cache
 E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\obj\Debug\netcoreapp3.1\Service.BloggingSystem.MvcApplicationPartsAssemblyInfo.cache
+E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\netcoreapp3.1\BloggingSystemBLLManager.dll
+E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\netcoreapp3.1\CommonBlogging.dll
+E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\netcoreapp3.1\BloggingSystemBLLManager.pdb
+E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+E:\Blogging System Demo\Server\BloggingSystem\Service.BloggingSystem\bin\Debug\netcoreapp3.1\CommonBlogging.pdb
