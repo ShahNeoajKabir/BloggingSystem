@@ -25,9 +25,9 @@ namespace BloggingSystemBLLManager
             
             try
             {
-                var check = _bloggingSystemDb.User.Where(p => p.Email == user.Email && p.MobileNo == user.MobileNo).FirstOrDefaultAsync();
+                var check = await _bloggingSystemDb.User.Where(p => p.Email == user.Email).FirstOrDefaultAsync();
 
-                if(user.UserName!=null && user.Email!=null && user.Password !=null && user.MobileNo !=null && user.Age >17 && user.Image != null)
+                if (user.UserName!=null && user.Email!=null && user.Password !=null && user.MobileNo !=null && user.Age >17 && user.Image != null)
                 {
                     if (check != null)
                     {
@@ -99,11 +99,18 @@ namespace BloggingSystemBLLManager
             }
         }
 
-        public async Task<List<User>> GetAll()
+        public List<User> GetAllStuff()
         {
-            List<User> user =await _bloggingSystemDb.User.Where(p => p.Status == (int)CommonBlogging.Enum.Enum.Status.Active).ToListAsync();
+            List<User> user = _bloggingSystemDb.User.Where(p => p.UserType == (int)CommonBlogging.Enum.Enum.UserType.Admin || p.UserType == (int)CommonBlogging.Enum.Enum.UserType.Moderator).ToList();
             return user;
         }
+
+        public List<User> GetAllUser()
+        {
+            List<User> user = _bloggingSystemDb.User.Where(p => p.UserType == (int)CommonBlogging.Enum.Enum.UserType.User).ToList();
+            return user;
+        }
+
 
         public async Task<User> GetById(int id)
         {
@@ -202,7 +209,8 @@ namespace BloggingSystemBLLManager
     public interface IUserBLLManager
     {
         Task<bool> AddUser(User user);
-        Task<List<User>> GetAll();
+        List<User> GetAllStuff();
+        List<User> GetAllUser();
         Task<bool> UpdateUser(User user);
         Task<User> GetById(int id);
         Task<bool> DeleteUser(User user);

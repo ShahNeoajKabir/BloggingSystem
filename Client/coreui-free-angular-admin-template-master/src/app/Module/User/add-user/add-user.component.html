@@ -1,0 +1,114 @@
+<div class="app-body" >
+  <main class="main d-flex align-items-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card mx-4">
+            <div class="card-body p-4">
+              <form  #f="ngForm" novalidate>
+                <h1>User Registration</h1>
+                <p class="text-muted">Create User account</p>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Image</span>
+                  </div>
+                  <div class="card-container">
+                    <input type="file" id="FUImage" name="FUImage" accept=".png, .jpg, .jpeg" (change)="handleFileInput($event.target.files)"> 
+                    <button type="button" class="btn btn-danger pull-left" (click)="btnUpload()">Upload</button> 
+                  </div>
+                  <div class="card-container">
+                    <img src="{{ImageBaseData}}" alt="Selected Image" height="200" width="200">
+                  </div>
+              
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-user"></i></span>
+                  </div>
+                  <input type="text" class="form-control"  [(ngModel)]="objuser.UserName" name="UserName" placeholder="UserName"  #refUserName="ngModel" id="UserName" required>
+                  <div *ngIf="!refUserName.valid  && (refUserName.dirty || refUserName.touched)" class="alert alert-danger">
+                    <div [hidden]="!refUserName.errors.required">
+                            UserName is required
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">@</span>
+                  </div>
+                  <input type="email" class="form-control"  [(ngModel)]="objuser.Email" name="Email" placeholder="Email"  #refEmail="ngModel" id="Email" required>
+                  <div *ngIf="!refEmail.valid  && (refEmail.dirty || refEmail.touched)" class="alert alert-danger">
+                    <div [hidden]="!refEmail.errors.required">
+                            Email is required
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-lock"></i></span>
+                  </div>
+                  <input type="password" class="form-control"  [(ngModel)]="objuser.Password" name="Password" placeholder="Password"  #refPassword="ngModel" id="Password" required>
+                  <div *ngIf="!refPassword.valid  && (refPassword.dirty || refPassword.touched)" class="alert alert-danger">
+                    <div [hidden]="!refPassword.errors.required">
+                      Password is required
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-call-end"></i></span>
+                  </div>
+                  <input type="text" class="form-control"  [(ngModel)]="objuser.MobileNo" name="MobileNo" placeholder="MobileNo"  #refMobileNo="ngModel" id="MobileNo" required>
+                  <div *ngIf="!refMobileNo.valid  && (refMobileNo.dirty || refMobileNo.touched)" class="alert alert-danger">
+                    <div [hidden]="!refMobileNo.errors.required">
+                      MobileNo is required
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text"><i class="icon-call-end"></i></span>
+                  </div>
+                  <input type="number" class="form-control"  [(ngModel)]="objuser.Age" name="Age" placeholder="Age"  #refAge="ngModel" id="Age" required>
+                  <div *ngIf="!refAge.valid  && (refAge.dirty || refAge.touched)" class="alert alert-danger">
+                    <div [hidden]="!refAge.errors.required">
+                      Age is required
+                    </div>
+                </div>
+                </div>
+                <div class="input-group mb-3">
+                  <label class="col-md-3 col-form-label" for="select3">User Type</label>
+                  <div class="col-md-9">
+                    <select name="UserType" class="form-control"
+                    [(ngModel)]="objuser.UserType">
+                  <option *ngFor="let usertype of lstusertype"
+                  [value]="usertype.key">{{usertype.value}}</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="input-group mb-3">
+                  <label class="col-md-3 col-form-label" for="select3">Status</label>
+                  <div class="col-md-9">
+                    <select name="Status" class="form-control"
+                    [(ngModel)]="objuser.Status">
+                  <option *ngFor="let status of lstStatus"
+                  [value]="status.key">{{status.value}}</option>
+                  </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-6">
+                    <button type="button" [disabled]="!f.form.valid" class="btn btn-success px-4" (click)="AddUser()">Add User</button>
+                  </div>
+                  <div class="col-6 text-right">
+                    <button type="button" [routerLink]="['/User/AddUser']" class="btn btn-danger px-4">Reset</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

@@ -1,0 +1,22 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { AddUserComponent } from './add-user/add-user.component';
+import { FormsModule } from '@angular/forms';
+import { UserService } from '../../Services/User/user.service';
+import { UserRoutingModule } from './user-routing.module';
+import { UserListComponent } from './user-list/user-list.component';
+import { StuffListComponent } from './stuff-list/stuff-list.component';
+
+
+
+
+@NgModule({
+  declarations: [AddUserComponent,  UserListComponent, StuffListComponent ],
+  imports: [
+    CommonModule,
+    UserRoutingModule,
+    FormsModule
+  ],
+  providers:[UserService],
+})
+export class UserModule { }

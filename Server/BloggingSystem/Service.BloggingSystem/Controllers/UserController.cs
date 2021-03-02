@@ -34,5 +34,22 @@ namespace Service.BloggingSystem.Controllers
                 throw new Exception("Please Try Again");
             }
         }
+
+        [HttpGet]
+        [Route("GetAllStuff")]
+
+        public List<User> GetAllStuff()
+        {
+            return  _userBLLManager.GetAllStuff();
+        }
+
+
+        [HttpGet]
+        [Route("GetAllUser")]
+
+        public List<User> GetAllUser()
+        {
+            return _userBLLManager.GetAllUser();
+        }
     }
 }
