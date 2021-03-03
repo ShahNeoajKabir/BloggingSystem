@@ -6,12 +6,13 @@ import { UserService } from '../../Services/User/user.service';
 import { UserRoutingModule } from './user-routing.module';
 import { UserListComponent } from './user-list/user-list.component';
 import { StuffListComponent } from './stuff-list/stuff-list.component';
+import { DeleteUserComponent } from './delete-user/delete-user.component';
 
 
 
 
 @NgModule({
-  declarations: [AddUserComponent,  UserListComponent, StuffListComponent ],
+  declarations: [AddUserComponent,  UserListComponent, StuffListComponent, DeleteUserComponent ],
   imports: [
     CommonModule,
     UserRoutingModule,

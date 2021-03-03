@@ -51,5 +51,56 @@ namespace Service.BloggingSystem.Controllers
         {
             return _userBLLManager.GetAllUser();
         }
+
+
+        [HttpPost]
+        [Route("UpdateUser")]
+
+        public async Task<ActionResult> UpdateUser([FromBody] User user)
+        {
+            try
+            {
+                return Ok(await _userBLLManager.UpdateUser(user));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Sorry Please Try Again");
+            }
+        }
+
+
+        [HttpPost]
+        [Route("GetById")]
+
+        public async Task<ActionResult> GetById([FromBody] User user)
+        {
+            try
+            {
+                return Ok(await _userBLLManager.GetById(user));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Sorry Please Try Again");
+            }
+        }
+
+
+        [HttpDelete]
+        [Route("DeleteUser")]
+
+        public async Task<ActionResult> DeleteUser([FromBody] User user)
+        {
+            try
+            {
+                return Ok(await _userBLLManager.DeleteUser(user));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Sorry Please Try Again");
+            }
+        }
     }
 }

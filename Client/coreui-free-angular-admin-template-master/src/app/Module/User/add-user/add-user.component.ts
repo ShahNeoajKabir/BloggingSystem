@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Status, UserType } from '../../../Common/Enum';
 import { Utility } from '../../../Common/Utility';
 import { User } from '../../../Model/User';
@@ -12,6 +12,7 @@ import { UserService } from '../../../Services/User/user.service';
 })
 export class AddUserComponent implements OnInit {
   public objuser:User=new User();
+  public edituser:User=new User();
   public lstStatus:any;
   public lstusertype:any; 
   ImageBaseData:string | ArrayBuffer=null;
@@ -20,17 +21,41 @@ export class AddUserComponent implements OnInit {
   cardImageBase64: string;
   
 
-  constructor(private userservice:UserService, private router:Router, private utility:Utility) { }
+  constructor(private userservice:UserService, private router:Router, private utility:Utility, private ActivateRouter:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.lstStatus=this.utility.enumToArray(Status);
     this.lstusertype=this.utility.enumToArray(UserType);
+    if (this.ActivateRouter.snapshot.params['id'] !== undefined) {
+
+      this.edituser.UserId = this.ActivateRouter.snapshot.params['id' ];
+      this.userservice.GetById(this.edituser).subscribe(( res: any) => {
+
+        this.objuser = res;
+        console.log(this.objuser);
+     });
+      console.log(this.ActivateRouter.snapshot.params['id' ] );
+
+    }
   }
   AddUser(){
-    this.userservice.AddUser(this.objuser).subscribe(res=>{
-      console.log(res);
-    });
+    console.log(this.objuser);
+    if (this.objuser.UserId > 0 ) {
+      this.userservice.UpdateUser(this.objuser).subscribe(res => {
+        console.log(res);
+      });
+    } else {
+      this.userservice.AddUser(this.objuser).subscribe(res => {
+        
+        console.log(res);
+        if(res){
+          this.router.navigate(['/User/ViewStuff']);
+        }
+      },er=>{
+          this.router.navigate(['/User/AddUser']);
+      } );
   }
+}
 
   handleFileInput(files: FileList) {
     let me = this;

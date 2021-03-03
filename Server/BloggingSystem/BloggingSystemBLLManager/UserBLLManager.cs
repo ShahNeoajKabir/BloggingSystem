@@ -71,7 +71,7 @@ namespace BloggingSystemBLLManager
             
             try
             {
-                var removeuser = _bloggingSystemDb.User.Where(p => p.UserId == user.UserId).AsNoTracking().FirstOrDefaultAsync();
+                var removeuser =await _bloggingSystemDb.User.Where(p => p.UserId == user.UserId).AsNoTracking().FirstOrDefaultAsync();
                 if (removeuser != null)
                 {
                     _bloggingSystemDb.User.Remove(user);
@@ -112,9 +112,9 @@ namespace BloggingSystemBLLManager
         }
 
 
-        public async Task<User> GetById(int id)
+        public async Task<User> GetById(User user)
         {
-            var res = await _bloggingSystemDb.User.Where(p => p.UserId == id).FirstOrDefaultAsync();
+            var res = await _bloggingSystemDb.User.Where(p => p.UserId == user.UserId).FirstOrDefaultAsync();
             return res;
         }
 
@@ -212,7 +212,7 @@ namespace BloggingSystemBLLManager
         List<User> GetAllStuff();
         List<User> GetAllUser();
         Task<bool> UpdateUser(User user);
-        Task<User> GetById(int id);
+        Task<User> GetById(User user);
         Task<bool> DeleteUser(User user);
         Task<bool> ChangePassword(VMChangePassword vMChangePassword);
     }

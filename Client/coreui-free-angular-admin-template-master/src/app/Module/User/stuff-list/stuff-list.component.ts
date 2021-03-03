@@ -19,7 +19,11 @@ export class StuffListComponent implements OnInit {
       this.lstuser=res;
       console.log(res);
 
-    })
+    });
+  }
+  Edit(id: any) {
+
+    console.log(id);
   }
 
 }

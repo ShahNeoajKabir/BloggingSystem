@@ -19,4 +19,17 @@ export class UserService {
   public GetAllUser(){
     return this.httpclient.get(this.url+"GetAllUser");
   }
+
+
+  public UpdateUser(User:any){
+    return this.httpclient.post(this.url+"UpdateUser",User);
+  }
+
+  public GetById(User:any){
+    return this.httpclient.post(this.url+"GetById",User);
+  }
+
+  public DeleteUser(User:any){
+    return this.httpclient.delete(this.url+"DeleteUser",User);
+  }
 }
