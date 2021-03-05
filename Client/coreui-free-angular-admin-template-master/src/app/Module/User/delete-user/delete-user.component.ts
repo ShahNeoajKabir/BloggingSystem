@@ -11,7 +11,7 @@ import { UserService } from '../../../Services/User/user.service';
 })
 export class DeleteUserComponent implements OnInit {
   public lstuser:User=new User();
-  public deleteuser:User=new User();
+  public deleteuserr:User=new User();
 
   public userid:any;
 
@@ -20,8 +20,8 @@ export class DeleteUserComponent implements OnInit {
   ngOnInit(): void {
     if (this.ActivateRouter.snapshot.params['id'] !== undefined) {
 
-      this.deleteuser.UserId = this.ActivateRouter.snapshot.params['id' ];
-      this.userservice.GetById(this.deleteuser).subscribe(( res: any) => {
+      this.deleteuserr.UserId = this.ActivateRouter.snapshot.params['id' ];
+      this.userservice.GetById(this.deleteuserr).subscribe(( res: any) => {
 
         this.lstuser = res;
         console.log(res);
@@ -31,9 +31,12 @@ export class DeleteUserComponent implements OnInit {
     }
   }
 
-  DeleteUser(){
-    this.userservice.DeleteUser(this.lstuser).subscribe((res:any)=>{
-      console.log(res)
+  Delete(){
+    this.userservice.DeleteUser(this.lstuser).subscribe(res=>{
+      console.log(res);
+      if(res){
+        this.router.navigate(['/User/ViewStuff']);
+      }
     })
   }
 

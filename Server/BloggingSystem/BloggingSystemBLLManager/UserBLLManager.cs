@@ -63,8 +63,23 @@ namespace BloggingSystemBLLManager
                 throw new Exception("Try Again");
             }
         }
+        public List<User> GetAllUnAssignUser()
+        {
+            List<User> user = new List<User>();
+            var userrolelist = _bloggingSystemDb.UserRole.Where(p => p.Status == (int)CommonBlogging.Enum.Enum.Status.Active).Select(c => c.UserId).ToArray();
+            if (userrolelist.Length > 0)
+            {
+                user = _bloggingSystemDb.User.Where(p => !userrolelist.Contains(p.UserId)).ToList();
 
-       
+            }
+            else
+            {
+                user = _bloggingSystemDb.User.Where(p => p.Status == (int)CommonBlogging.Enum.Enum.Status.Active).ToList();
+
+            }
+            return user;
+        }
+
 
         public async Task<bool> DeleteUser(User user)
         {
@@ -115,6 +130,17 @@ namespace BloggingSystemBLLManager
         public async Task<User> GetById(User user)
         {
             var res = await _bloggingSystemDb.User.Where(p => p.UserId == user.UserId).FirstOrDefaultAsync();
+            return res;
+        }
+
+        public async Task<User> GetByID(int user)
+        {
+            var res = await _bloggingSystemDb.User.Where(p => p.UserId == user).FirstOrDefaultAsync();
+            var roleid = await _bloggingSystemDb.UserRole.Where(p => p.UserId == user && p.Status == (int)CommonBlogging.Enum.Enum.Status.Active).FirstOrDefaultAsync();
+            if (roleid != null)
+            {
+                res.Role = roleid.RoleId;
+            }
             return res;
         }
 
@@ -213,7 +239,9 @@ namespace BloggingSystemBLLManager
         List<User> GetAllUser();
         Task<bool> UpdateUser(User user);
         Task<User> GetById(User user);
+        Task<User> GetByID(int user);
         Task<bool> DeleteUser(User user);
         Task<bool> ChangePassword(VMChangePassword vMChangePassword);
+        List<User> GetAllUnAssignUser();
     }
 }

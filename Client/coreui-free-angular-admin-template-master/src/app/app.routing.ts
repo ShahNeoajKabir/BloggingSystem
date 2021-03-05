@@ -54,7 +54,17 @@ export const routes: Routes = [
         path: 'base',
         loadChildren: () => import('./views/base/base.module').then(m => m.BaseModule)
       },
+
       { path: 'User', loadChildren: () => import('./Module/user/user.module').then(m => m.UserModule) },
+
+
+      { path: 'Role', loadChildren: () => import('./Module/Role/role.module').then(m => m.RoleModule) },
+
+
+      { path: 'UserRole', loadChildren: () => import('./Module/UserRole/userrole.module').then(m => m.UserRoleModule) },
+
+
+
       {
         path: 'buttons',
         loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)

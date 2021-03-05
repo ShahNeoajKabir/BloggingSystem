@@ -8,6 +8,7 @@ namespace BloggingSystem.DTO.DTO
     {
         public int PostId { get; set; }
         public string Title { get; set; }
+        public string Image { get; set; }
         public string Describtion { get; set; }
         public string PostTag { get; set; }
         public string CreatedBy { get; set; }
@@ -15,7 +16,7 @@ namespace BloggingSystem.DTO.DTO
         public string UpdatedBy { get; set; }
         public DateTime UpdatedDate { get; set; }
         public int Status { get; set; }
-        public DateTime PostTime { get; set; }
+        public DateTime? PostTime { get; set; }
         public int UserId { get; set; }
         public int CategoryId { get; set; }
         public  User User { get; set; }

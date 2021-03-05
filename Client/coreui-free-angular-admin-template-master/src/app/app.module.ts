@@ -44,6 +44,7 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   imports: [
@@ -64,6 +65,7 @@ import { HttpClientModule } from '@angular/common/http';
     ChartsModule,
     IconModule,
     IconSetModule.forRoot(),
+    ToastrModule.forRoot()
   ],
   declarations: [
     AppComponent,

@@ -18,7 +18,7 @@ namespace BloggingSystem.DTO.DTO
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
         public string UpdatedBy { get; set; }
-        public DateTime UpdatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
         public int Status { get; set; }
         [NotMapped]
         public int Role { get; set; }

@@ -20,6 +20,10 @@ export class UserService {
     return this.httpclient.get(this.url+"GetAllUser");
   }
 
+  public GetAllUnAssignUser(){
+    return this.httpclient.get(this.url+"GetAllUnAssignUser");
+  }
+
 
   public UpdateUser(User:any){
     return this.httpclient.post(this.url+"UpdateUser",User);
@@ -30,6 +34,6 @@ export class UserService {
   }
 
   public DeleteUser(User:any){
-    return this.httpclient.delete(this.url+"DeleteUser",User);
+    return this.httpclient.post(this.url+"DeleteUser",User);
   }
 }

@@ -7,12 +7,13 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserListComponent } from './user-list/user-list.component';
 import { StuffListComponent } from './stuff-list/stuff-list.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
+import { UnAssignUserComponent } from './un-assign-user/un-assign-user.component';
 
 
 
 
 @NgModule({
-  declarations: [AddUserComponent,  UserListComponent, StuffListComponent, DeleteUserComponent ],
+  declarations: [AddUserComponent,  UserListComponent, StuffListComponent, DeleteUserComponent, UnAssignUserComponent ],
   imports: [
     CommonModule,
     UserRoutingModule,

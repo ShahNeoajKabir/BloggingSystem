@@ -49,6 +49,8 @@ namespace Service.BloggingSystem
             });
             services.Configure<JwtTokenSetting>(Configuration.GetSection("JwtTokenSetting"));
             services.AddScoped<IUserBLLManager, UserBLLManager>();
+            services.AddScoped<IRoleBLLManager, RoleBLLManager>();
+            services.AddScoped<IUserRoleBLLManager, UserRoleBLLManager>();
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
         }
 
@@ -59,6 +61,7 @@ namespace Service.BloggingSystem
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseMiddleware<JwtMiddleware>();
 
             app.UseHttpsRedirection();
 

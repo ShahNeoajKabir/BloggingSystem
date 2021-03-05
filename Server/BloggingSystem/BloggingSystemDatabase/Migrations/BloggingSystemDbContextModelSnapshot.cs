@@ -41,7 +41,7 @@ namespace BloggingSystemDatabase.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("CategoriesId");
@@ -74,7 +74,7 @@ namespace BloggingSystemDatabase.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("UserId")
@@ -106,10 +106,13 @@ namespace BloggingSystemDatabase.Migrations
                     b.Property<string>("Describtion")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("PostTag")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("PostTime")
+                    b.Property<DateTime?>("PostTime")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("Status")
@@ -158,7 +161,7 @@ namespace BloggingSystemDatabase.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.HasKey("RoleId");
@@ -200,7 +203,7 @@ namespace BloggingSystemDatabase.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserName")
@@ -236,7 +239,7 @@ namespace BloggingSystemDatabase.Migrations
                     b.Property<string>("UpdatedBy")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2");
 
                     b.Property<int>("UserId")

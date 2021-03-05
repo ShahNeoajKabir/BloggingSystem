@@ -52,6 +52,14 @@ namespace Service.BloggingSystem.Controllers
             return _userBLLManager.GetAllUser();
         }
 
+        [HttpGet]
+        [Route("GetAllUnAssignUser")]
+
+        public List<User> GetAllUnAssignUser()
+        {
+            return _userBLLManager.GetAllUnAssignUser();
+        }
+
 
         [HttpPost]
         [Route("UpdateUser")]
@@ -86,8 +94,24 @@ namespace Service.BloggingSystem.Controllers
             }
         }
 
+        [HttpPost]
+        [Route("GetByID")]
 
-        [HttpDelete]
+        public async Task<ActionResult> GetByID([FromBody] int user)
+        {
+            try
+            {
+                return Ok(await _userBLLManager.GetByID(user));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Sorry Please Try Again");
+            }
+        }
+
+
+        [HttpPost]
         [Route("DeleteUser")]
 
         public async Task<ActionResult> DeleteUser([FromBody] User user)

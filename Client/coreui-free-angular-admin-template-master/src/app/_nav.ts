@@ -11,13 +11,24 @@ export const navItems: INavData[] = [
     }
   },
   {
-    name: 'User',
-    url: '/User/AddUser',
+    name: 'UserRole',
+    url: '/UserRole/View',
+    icon: 'icon-user-following'
+  },
+
+  {
+    name: 'UnAssignUser',
+    url: '/User/ViewUnAssignUser',
     icon: 'icon-user-following'
   },
   {
     name: 'Stuff List',
     url: '/User/ViewStuff',
+    icon: 'icon-user-following'
+  },
+  {
+    name: 'Role',
+    url: '/Role/ViewRole',
     icon: 'icon-user-following'
   },
   {
