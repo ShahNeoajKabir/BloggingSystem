@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Status, UserType } from '../../../Common/Enum';
 import { Utility } from '../../../Common/Utility';
 import { User } from '../../../Model/User';
+import { NotificationService } from '../../../Services/Notification/notification.service';
 import { UserService } from '../../../Services/User/user.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class AddUserComponent implements OnInit {
   cardImageBase64: string;
   
 
-  constructor(private userservice:UserService, private router:Router, private utility:Utility, private ActivateRouter:ActivatedRoute) { }
+  constructor(private userservice:UserService, private router:Router, private utility:Utility, private ActivateRouter:ActivatedRoute , private notification:NotificationService) { }
 
   ngOnInit(): void {
     this.lstStatus=this.utility.enumToArray(Status);
@@ -29,7 +30,7 @@ export class AddUserComponent implements OnInit {
     if (this.ActivateRouter.snapshot.params['id'] !== undefined) {
 
       this.edituser.UserId = this.ActivateRouter.snapshot.params['id' ];
-      this.userservice.GetById(this.edituser).subscribe(( res: any) => {
+      this.userservice.SerchBy(this.edituser).subscribe(( res: any) => {
 
         this.objuser = res;
         console.log(this.objuser);
@@ -42,16 +43,25 @@ export class AddUserComponent implements OnInit {
     console.log(this.objuser);
     if (this.objuser.UserId > 0 ) {
       this.userservice.UpdateUser(this.objuser).subscribe(res => {
+        if(res){
+          this.notification.showUpdate("","");
+          this.router.navigate(['/User/ViewStuff']);
+        }
         console.log(res);
+      }, er=>{
+        this.notification.showError("","");
+        this.router.navigate(['/User/AddUser']);
       });
     } else {
       this.userservice.AddUser(this.objuser).subscribe(res => {
         
         console.log(res);
         if(res){
+          this.notification.showSuccess("","");
           this.router.navigate(['/User/ViewStuff']);
         }
       },er=>{
+        this.notification.showError("","");
           this.router.navigate(['/User/AddUser']);
       } );
   }

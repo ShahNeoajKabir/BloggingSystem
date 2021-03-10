@@ -39,8 +39,13 @@ export class AddRoleComponent implements OnInit {
       this.roleservice.UpdateRole(this.objRole).subscribe(res => {
         console.log(res);
         if(res){
+          
+        this.notification.showUpdate("","");
           this.router.navigate(['/Role/ViewRole']);
         }
+      }, er=>{
+        this.notification.showError("","");
+          this.router.navigate(['/Role/AddRole']);
       });
     } else {
       this.roleservice.AddRole(this.objRole).subscribe(res => {
@@ -50,6 +55,9 @@ export class AddRoleComponent implements OnInit {
           this.router.navigate(['/Role/ViewRole']);
           this.notification.showSuccess("Successfully","Added");
         }
+      },er=>{
+        this.notification.showError("","");
+          this.router.navigate(['/Role/AddRole']);
       } );
     }
   }

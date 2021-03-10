@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuard } from './Common/Auth/auth.guard';
 
 // Import Containers
 import { DefaultLayoutComponent } from './containers';
@@ -43,9 +44,11 @@ export const routes: Routes = [
       title: 'Register Page'
     }
   },
+  { path: '', loadChildren: () => import('../app/Components/signin.module').then(m => m.SigninModule) },
+
   {
     path: '',
-    component: DefaultLayoutComponent,
+    component: DefaultLayoutComponent,canActivate: [AuthGuard],
     data: {
       title: 'Home'
     },
@@ -63,36 +66,39 @@ export const routes: Routes = [
 
       { path: 'UserRole', loadChildren: () => import('./Module/UserRole/userrole.module').then(m => m.UserRoleModule) },
 
+      { path: 'Categories', loadChildren: () => import('./Module/Categories/categories.module').then(m => m.CategoriesModule) },
 
 
-      {
-        path: 'buttons',
-        loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
-      },
-      {
-        path: 'charts',
-        loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
-      },
+
+
+      // {
+      //   path: 'buttons',
+      //   loadChildren: () => import('./views/buttons/buttons.module').then(m => m.ButtonsModule)
+      // },
+      // {
+      //   path: 'charts',
+      //   loadChildren: () => import('./views/chartjs/chartjs.module').then(m => m.ChartJSModule)
+      // },
       {
         path: 'dashboard',
         loadChildren: () => import('./views/dashboard/dashboard.module').then(m => m.DashboardModule)
       },
-      {
-        path: 'icons',
-        loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
-      },
-      {
-        path: 'notifications',
-        loadChildren: () => import('./views/notifications/notifications.module').then(m => m.NotificationsModule)
-      },
-      {
-        path: 'theme',
-        loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
-      },
-      {
-        path: 'widgets',
-        loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
-      }
+      // {
+      //   path: 'icons',
+      //   loadChildren: () => import('./views/icons/icons.module').then(m => m.IconsModule)
+      // },
+      // {
+      //   path: 'notifications',
+      //   loadChildren: () => import('./views/notifications/notifications.module').then(m => m.NotificationsModule)
+      // },
+      // {
+      //   path: 'theme',
+      //   loadChildren: () => import('./views/theme/theme.module').then(m => m.ThemeModule)
+      // },
+      // {
+      //   path: 'widgets',
+      //   loadChildren: () => import('./views/widgets/widgets.module').then(m => m.WidgetsModule)
+      // }
     ]
   },
   { path: '**', component: P404Component }

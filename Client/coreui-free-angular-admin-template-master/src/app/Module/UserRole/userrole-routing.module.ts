@@ -1,6 +1,7 @@
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ToastrModule } from 'ngx-toastr';
 import { AddUserRoleComponent } from './add-user-role/add-user-role.component';
 import { DeleteUserRoleComponent } from './delete-user-role/delete-user-role.component';
 import { ListUserRoleComponent } from './list-user-role/list-user-role.component';
@@ -22,7 +23,7 @@ const routes: Routes = [{ path: ':id/AddUserRole', component: AddUserRoleCompone
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes),ToastrModule.forRoot()],
   exports: [RouterModule]
 })
 export class UserRoleRoutingModule { }

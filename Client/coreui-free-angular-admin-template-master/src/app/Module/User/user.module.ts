@@ -8,12 +8,13 @@ import { UserListComponent } from './user-list/user-list.component';
 import { StuffListComponent } from './stuff-list/stuff-list.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { UnAssignUserComponent } from './un-assign-user/un-assign-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 
 
 @NgModule({
-  declarations: [AddUserComponent,  UserListComponent, StuffListComponent, DeleteUserComponent, UnAssignUserComponent ],
+  declarations: [AddUserComponent,  UserListComponent, StuffListComponent, DeleteUserComponent, UnAssignUserComponent, UpdateUserComponent ],
   imports: [
     CommonModule,
     UserRoutingModule,

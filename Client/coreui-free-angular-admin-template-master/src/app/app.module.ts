@@ -45,6 +45,8 @@ import { ChartsModule } from 'ng2-charts';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
+import { httpInterceptorProviders } from './Common/interceptor';
+import { AuthService } from './Common/Auth/auth.service';
 
 @NgModule({
   imports: [
@@ -75,12 +77,13 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     RegisterComponent
   ],
-  providers: [HttpClientModule,
+  providers: [HttpClientModule,httpInterceptorProviders,
     {
       provide: LocationStrategy,
       useClass: HashLocationStrategy
     },
     IconSetService,
+    AuthService
   ],
   bootstrap: [ AppComponent ]
 })

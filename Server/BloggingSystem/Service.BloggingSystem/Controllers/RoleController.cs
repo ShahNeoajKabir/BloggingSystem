@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BloggingSystem.DTO.DTO;
+using BloggingSystem.DTO.View_Model;
 using BloggingSystemBLLManager;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace Service.BloggingSystem.Controllers
 {
@@ -23,11 +25,14 @@ namespace Service.BloggingSystem.Controllers
         [HttpPost]
         [Route("AddRole")]
 
-        public async Task<ActionResult>AddRole([FromBody] Role role)
+        public async Task<ActionResult>AddRole([FromBody] TempMessage message)
         {
             try
             {
-               return Ok( await _roleBLLManager.AddRole(role));
+                var loginedUser = (User)HttpContext.Items["User"];
+                Role role = JsonConvert.DeserializeObject<Role>(message.Content.ToString());
+                role.CreatedBy = loginedUser.UserName;
+                return Ok( await _roleBLLManager.AddRole(role));
             }
             catch (Exception ex )
             {
@@ -39,10 +44,11 @@ namespace Service.BloggingSystem.Controllers
 
         [HttpPost]
         [Route("DeleteRole")]
-        public async Task<ActionResult> DeleteRole(Role role)
+        public async Task<ActionResult> DeleteRole(TempMessage message)
         {
             try
             {
+                Role role = JsonConvert.DeserializeObject<Role>(message.Content.ToString());
                 var res = await _roleBLLManager.DeleteRole(role);
                 return Ok(res);
             }
@@ -72,10 +78,11 @@ namespace Service.BloggingSystem.Controllers
 
         [HttpPost]
         [Route("GetById")]
-        public async Task<ActionResult> GetById(Role role)
+        public async Task<ActionResult> GetById(TempMessage message)
         {
             try
             {
+                Role role = JsonConvert.DeserializeObject<Role>(message.Content.ToString());
                 var res = await _roleBLLManager.GetById(role);
                 return Ok(res);
             }
@@ -88,10 +95,13 @@ namespace Service.BloggingSystem.Controllers
 
         [HttpPost]
         [Route("UpdateRole")]
-        public async Task<ActionResult> UpdateRole(Role role)
+        public async Task<ActionResult> UpdateRole(TempMessage message)
         {
             try
             {
+                var loginedUser = (User)HttpContext.Items["User"];
+                Role role = JsonConvert.DeserializeObject<Role>(message.Content.ToString());
+                role.CreatedBy = loginedUser.UserName;
                 var res = await _roleBLLManager.UpdateRole(role);
                 return Ok(res);
             }

@@ -1,0 +1,46 @@
+<div class="app-body" >
+    <main class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card mx-4">
+              <div class="card-body p-4">
+                <form  #f="ngForm" novalidate>
+                  <p class="text-muted">Create Role</p>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="icon-directions"></i></span>
+                    </div>
+                    <input type="text" class="form-control"  [(ngModel)]="objcategories.CategoriesName" name="CategoriesName" placeholder="CategoriesName"  #refCategoriesName="ngModel" id="CategoriesName" required>
+                    <div *ngIf="!refCategoriesName.valid  && (refCategoriesName.dirty || refCategoriesName.touched)" class="alert alert-danger">
+                      <div [hidden]="!refCategoriesName.errors.required">
+                        CategoriesName is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <label class="col-md-2 col-form-label" for="select3">Status</label>
+                    <div class="col-md-10">
+                      <select name="Status" class="form-control"
+                      [(ngModel)]="objcategories.Status">
+                    <option *ngFor="let status of lstStatus"
+                    [value]="status.key">{{status.value}}</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="button" [disabled]="!f.form.valid" class="btn btn-success px-4" (click)="AddCategories()">Submit</button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button type="button" [routerLink]="['/Role/AddRole']" class="btn btn-danger px-4"><i class="icon-refresh"></i>Reset</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>

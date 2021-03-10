@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Status } from '../../../Common/Enum';
 import { Utility } from '../../../Common/Utility';
 import { UserRole } from '../../../Model/UserRole';
+import { NotificationService } from '../../../Services/Notification/notification.service';
 import { RoleService } from '../../../Services/Role/role.service';
 import { UserService } from '../../../Services/User/user.service';
 import { UserRoleService } from '../../../Services/UserRole/user-role.service';
@@ -25,7 +26,8 @@ export class UpdateUserRoleComponent implements OnInit {
     private utility:Utility ,
     private activatedroute:ActivatedRoute,
     private router:Router,
-    private roleservice:RoleService
+    private roleservice:RoleService,
+    private notification:NotificationService
         ) { }
 
   ngOnInit(): void {
@@ -54,8 +56,11 @@ export class UpdateUserRoleComponent implements OnInit {
     this.userroleservice.UpdateUserRole(this.objuserrole).subscribe(res=>{
       console.log(res);
       if(res){
+        this.notification.showUpdate("","");
         this.router.navigate(['/UserRole/View']);
       }
+    }, er=>{
+      this.notification.showError("","");
     })
 
   }

@@ -1,0 +1,31 @@
+<table class="table table-responsive-sm table-hover table-outline mb-0">
+ 
+    <thead class="thead-light">
+      <div class="col-6 col-sm-4 col-md-2 col-xl mb-3 mb-xl-0">
+        <button type="button" class="btn btn-block btn-success" routerLink="/Categories/AddCategories"style="margin-bottom: 10px; width: 20%;"><i class="icon-plus"> Add Categories</i></button>
+      </div>
+      <tr>
+        <th class="text-center">Categories Name</th>
+        <th class="text-center">Status</th>
+        <th class="text-center">Edit</th>
+        <th class="text-center">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let categories of lstcategories">
+        <td class="text-center">
+          <div>{{categories.CategoriesName}}</div>
+          
+        </td>
+        <td class="text-center"><span class="btn-success" *ngIf="categories.Status===1"> <i class="fa fa-check" aria-hidden="true"></i> Active</span>
+            <span class="btn-danger" *ngIf="categories.Status===2"> <i class="fa fa-times" aria-hidden="true"></i> Deactived</span>
+        </td>
+
+        <td class="text-center"> <a class="btn btn-primary" routerLink="../{{ categories.CategoriesId}}/edit"><i class="icon-note"></i></a></td>
+        <td class="text-center"> <a class="btn btn-danger" routerLink="../{{ categories.CategoriesId }}/delete"><i class="icon-close"></i></a></td>
+
+
+      </tr>
+      
+    </tbody>
+  </table>

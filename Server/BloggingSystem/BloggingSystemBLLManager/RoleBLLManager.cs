@@ -30,7 +30,7 @@ namespace BloggingSystemBLLManager
                     }
                     else
                     {
-                        role.CreatedBy = "Bappy";
+                        
                         role.CreatedDate = DateTime.Now;
                         await _roleDbContext.Role.AddAsync(role);
                         var res = await _roleDbContext.SaveChangesAsync();
@@ -120,7 +120,7 @@ namespace BloggingSystemBLLManager
 
                     else
                     {
-                        role.UpdatedBy = "Bappy";
+                        
                         role.UpdatedDate = DateTime.Now;
                         _roleDbContext.Role.Update(role);
                         var res = await _roleDbContext.SaveChangesAsync();

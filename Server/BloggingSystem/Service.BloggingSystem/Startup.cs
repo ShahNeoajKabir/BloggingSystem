@@ -50,7 +50,9 @@ namespace Service.BloggingSystem
             services.Configure<JwtTokenSetting>(Configuration.GetSection("JwtTokenSetting"));
             services.AddScoped<IUserBLLManager, UserBLLManager>();
             services.AddScoped<IRoleBLLManager, RoleBLLManager>();
+            services.AddScoped<ISecurityBLLManager, SecurityBLLManager>();
             services.AddScoped<IUserRoleBLLManager, UserRoleBLLManager>();
+            services.AddScoped<ICategoriesBLLManager, CategoriesBLLManager>();
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
         }
 

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Role } from '../../../Model/Role';
+import { NotificationService } from '../../../Services/Notification/notification.service';
 import { RoleService } from '../../../Services/Role/role.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class DeleteRoleComponent implements OnInit {
   public objRole:Role = new Role();
   public deleteerole:Role=new Role();
 
-  constructor(private roleservice:RoleService, private router:Router , private ActivateRouter:ActivatedRoute) { }
+  constructor(private roleservice:RoleService, private router:Router , private ActivateRouter:ActivatedRoute , private notification:NotificationService) { }
 
   ngOnInit(): void {
     if (this.ActivateRouter.snapshot.params['id'] !== undefined) {
@@ -32,9 +33,12 @@ export class DeleteRoleComponent implements OnInit {
     this.roleservice.DeleteRole(this.objRole).subscribe(res=>{
       console.log(res);
       if(res){
+        this.notification.showDelete("","");
         this.router.navigate(['/Role/ViewRole']);
       }
 
+    },er=>{
+      this.notification.showError("","");
     })
   }
 

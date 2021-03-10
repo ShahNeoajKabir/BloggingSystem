@@ -36,7 +36,6 @@ namespace BloggingSystemBLLManager
                     else
                     {
                         user.CreatedDate = DateTime.Now;
-                        user.CreatedBy = "Bappy";
                         user.Password = new Encryptionservice().Encrypt(user.Password);
                         await _bloggingSystemDb.User.AddAsync(user);
                         var result = await _bloggingSystemDb.SaveChangesAsync();
@@ -114,11 +113,31 @@ namespace BloggingSystemBLLManager
             }
         }
 
-        public List<User> GetAllStuff()
+        public async Task<List<VmUsers>> GetAllStuff()
         {
-            List<User> user = _bloggingSystemDb.User.Where(p => p.UserType == (int)CommonBlogging.Enum.Enum.UserType.Admin || p.UserType == (int)CommonBlogging.Enum.Enum.UserType.Moderator).ToList();
+            List<VmUsers> user = await _bloggingSystemDb.User.Where(p => p.Status == (int)CommonBlogging.Enum.Enum.UserType.Admin || p.UserType== (int)CommonBlogging.Enum.Enum.UserType.Moderator).Select(c => new VmUsers()
+            {
+
+                Email = c.Email,
+                MobileNo = c.MobileNo,
+                RoleName = c.UserRole.Where(p => p.Status == 1).FirstOrDefault().Role.RoleName,
+                Status = c.Status,
+                UserId = c.UserId,
+                UserName = c.UserName,
+                Image=c.Image,
+                Age=c.Age,
+                UserType=c.UserType
+                
+
+            }).ToListAsync();
             return user;
         }
+
+        //public List<User> GetAllStuff()
+        //{
+        //    List<User> user = _bloggingSystemDb.User.Where(p => p.Status == (int)CommonBlogging.Enum.Enum.Status.Active).ToList();
+        //    return user;
+        //}
 
         public List<User> GetAllUser()
         {
@@ -127,7 +146,7 @@ namespace BloggingSystemBLLManager
         }
 
 
-        public async Task<User> GetById(User user)
+        public async Task<User> SerchBy(User user)
         {
             var res = await _bloggingSystemDb.User.Where(p => p.UserId == user.UserId).FirstOrDefaultAsync();
             return res;
@@ -235,10 +254,11 @@ namespace BloggingSystemBLLManager
     public interface IUserBLLManager
     {
         Task<bool> AddUser(User user);
-        List<User> GetAllStuff();
+        //List<User> GetAllStuff();
         List<User> GetAllUser();
+        Task<List<VmUsers>> GetAllStuff();
         Task<bool> UpdateUser(User user);
-        Task<User> GetById(User user);
+        Task<User> SerchBy(User user);
         Task<User> GetByID(int user);
         Task<bool> DeleteUser(User user);
         Task<bool> ChangePassword(VMChangePassword vMChangePassword);

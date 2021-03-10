@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Status } from '../../../Common/Enum';
 import { Utility } from '../../../Common/Utility';
 import { UserRole } from '../../../Model/UserRole';
+import { NotificationService } from '../../../Services/Notification/notification.service';
 import { RoleService } from '../../../Services/Role/role.service';
 import { UserService } from '../../../Services/User/user.service';
 import { UserRoleService } from '../../../Services/UserRole/user-role.service';
@@ -26,7 +27,8 @@ export class AddUserRoleComponent implements OnInit {
       private roleservice:RoleService, 
       private router:Router ,
        private activatedroute:ActivatedRoute,
-       private utility:Utility
+       private utility:Utility,
+       private notification:NotificationService
        
        ) { }
 
@@ -51,9 +53,18 @@ export class AddUserRoleComponent implements OnInit {
 
   AddUserRole(){
     this.userroleservice.AddUserRole(this.objuserrole).subscribe(res=>{
-      console.log(res);
+     
+        this.notification.showSuccess("","");
+        this.router.navigate(['/UserRole/View']);
+        if ( res === 1) {
+          console.log(res);
+        }
+        console.log(res);
+
 
       
+    },er=>{
+      this.notification.showError("","");
     })
   }
 

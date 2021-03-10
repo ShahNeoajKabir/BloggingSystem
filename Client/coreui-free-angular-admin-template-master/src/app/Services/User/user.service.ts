@@ -13,7 +13,7 @@ export class UserService {
   }
 
   public GetAllStuff(){
-    return this.httpclient.get(this.url+"GetAllStuff");
+    return this.httpclient.post(this.url+"GetAllStuff","");
   }
 
   public GetAllUser(){
@@ -29,8 +29,12 @@ export class UserService {
     return this.httpclient.post(this.url+"UpdateUser",User);
   }
 
-  public GetById(User:any){
-    return this.httpclient.post(this.url+"GetById",User);
+  public SerchBy(User:any){
+    return this.httpclient.post(this.url+"SerchBy",User);
+  }
+  
+  public GetByID(User:any){
+    return this.httpclient.post(this.url+"GetByID",User);
   }
 
   public DeleteUser(User:any){
