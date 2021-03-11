@@ -37,6 +37,12 @@ export const navItems: INavData[] = [
     url: '/Categories/View',
     icon: 'icon-user-following'
   },
+
+  {
+    name: 'Post',
+    url: '/Post/View',
+    icon: 'icon-user-following'
+  },
   {
     title: true,
     name: 'Theme'

@@ -69,6 +69,10 @@ export const routes: Routes = [
       { path: 'Categories', loadChildren: () => import('./Module/Categories/categories.module').then(m => m.CategoriesModule) },
 
 
+      { path: 'Post', loadChildren: () => import('./Module/Post/post.module').then(m => m.PostModule) },
+
+
+
 
 
       // {

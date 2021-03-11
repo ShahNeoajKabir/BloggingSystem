@@ -181,7 +181,7 @@ namespace BloggingSystemBLLManager
                         user.UpdatedBy = "Bappy";
                         user.UpdatedDate = DateTime.Now;
                         _bloggingSystemDb.User.Update(user);
-                        var res = _bloggingSystemDb.SaveChanges();
+                        var res = await _bloggingSystemDb.SaveChangesAsync();
                         if (res > 0)
                         {
                             return true;

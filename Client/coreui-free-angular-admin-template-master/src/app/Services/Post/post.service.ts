@@ -1,9 +1,22 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
+  url="http://localhost:50604/api/Post/";
 
-  constructor() { }
+
+  constructor(private httpclient:HttpClient) { }
+
+  public AddPost(post:any){
+    return this.httpclient.post(this.url+"AddPost",post);
+
+  }
+
+  public GetAll(){
+    return this.httpclient.get(this.url+"GetAll");
+
+  }
 }
