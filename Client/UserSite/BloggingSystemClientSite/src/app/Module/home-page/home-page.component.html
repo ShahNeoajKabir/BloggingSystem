@@ -1,0 +1,107 @@
+
+<!--start-main-->
+<div class="header-bottom">
+    <div class="container">
+        <div class="logo wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+            <h1><a href="index.html">STYLE BLOG</a></h1>
+            <p><label class="of"></label>LET'S MAKE A PERFECT STYLE<label class="on"></label></p>
+        </div>
+    </div>
+</div>
+<!-- banner -->
+
+<div class="banner">
+<div class="container">	
+    <h2>Contrary to popular belive in yourself</h2>
+</div>
+</div>
+
+<!-- technology-left -->
+<div class="technology">
+<div class="container">
+    <div class="col-md-10 technology-left">
+    <div class="tech-no">
+        <!-- technology-top -->
+        
+        <div class="clearfix"></div>
+        <!-- technology-top -->
+        <!-- technology-top -->
+        <div class="w3ls">
+            <div class="clearfix"></div>
+        </div>
+        <!-- technology-top -->
+        <div class="wthree"  *ngFor="let post of lstpost">
+             <div class="col-md-6 wthree-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+                <div class="tch-img">
+                        <a href="singlepage.html"><img src="{{post.Image}}" class="img-responsive" alt=""></a>
+                    </div>
+             </div>
+             <div class="col-md-6 wthree-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+                    <h3><a href="singlepage.html">{{post.Title}}</a></h3>
+                    <h6>BY <a href="singlepage.html">{{post.CreatedBy}} </a>{{post.PostTime | date:'yyyy-MM-dd'}}</h6>
+                        <p>{{post.PostTag}}</p>
+                        <div class="bht1">
+                            <a routerLink="../{{ post.PostId }}/View">Read More</a>
+                        </div>
+                        <div class="soci">
+                            <ul>
+                                
+                                <li class="hvr-rectangle-out"><a class="twit" href="#"></a></li>
+                                <li class="hvr-rectangle-out"><a class="pin" href="#"></a></li>
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                
+             </div>
+                <div class="clearfix"></div>
+        </div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <!-- technology-right -->
+</div>
+</div>
+<div class="footer">
+    <div class="container">
+        <div class="col-md-4 footer-left wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+            <h4>About Me</h4>
+            <p>Consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
+            <img src="assets/images/t4.jpg" class="img-responsive" alt="">
+                <div class="bht1">
+                    <a href="singlepage.html">Read More</a>
+                </div>
+        </div>
+        <div class="col-md-4 footer-middle wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+        <h4>Latest Tweet</h4>
+        <div class="mid-btm">
+            <p>Sed do eiusmod tempor Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
+            <a href="https://w3layouts.com/">https://w3layouts.com/</a>
+        </div>
+        
+            <p>Consectetur adipisicing Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod .</p>
+            <a href="https://w3layouts.com/">https://w3layouts.com/</a>
+    
+        </div>
+        <div class="col-md-4 footer-right wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+            <h4>Newsletter</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
+                    <div class="name">
+                        <form action="#" method="post">
+                            <input type="text" placeholder="Your Name" required="">
+                            <input type="text" placeholder="Your Email" required="">
+                            <input type="submit" value="Subscribed Now">
+                        </form>
+                    
+                    </div>	
+                    
+                        <div class="clearfix"> </div>
+                
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<div class="copyright wow fadeInDown"  data-wow-duration=".8s" data-wow-delay=".2s">
+            <div class="container">
+                <p>© 2016 Style Blog. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+            </div>
+        </div>

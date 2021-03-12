@@ -15,6 +15,19 @@ export class PostService {
 
   }
 
+  public UpdatePost(post:any){
+    return this.httpclient.post(this.url+"UpdatePost",post);
+
+  }
+  public DeletePost(post:any){
+    return this.httpclient.post(this.url+"DeletePost",post);
+
+  }
+
+  public GetById(post:any){
+    return this.httpclient.post(this.url+"GetById",post);
+
+  }
   public GetAll(){
     return this.httpclient.get(this.url+"GetAll");
 

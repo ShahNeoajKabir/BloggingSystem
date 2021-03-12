@@ -52,9 +52,35 @@ namespace BloggingSystemBLLManager
             }
         }
 
-        public Task<bool> DeletePost(Post post)
+        public async Task<bool> DeletePost(Post post)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var removepost = await _dbContext.Post.Where(p => p.PostId == post.PostId).AsNoTracking().FirstOrDefaultAsync();
+                if (removepost != null)
+                {
+                    _dbContext.Post.Remove(post);
+                    var res = await _dbContext.SaveChangesAsync();
+                    if (res > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        throw new Exception("");
+                    }
+                }
+
+                else
+                {
+                    throw new Exception("");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("");
+            }
         }
 
         public List<Post> GetAll()
@@ -89,14 +115,79 @@ namespace BloggingSystemBLLManager
             }
         }
 
-        public Task<Post> GetById(Post post)
+        public async Task<Post> GetById(Post post)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var id = await _dbContext.Post.Where(p => p.PostId == post.PostId).FirstOrDefaultAsync();
+                return id;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("");
+            }
         }
 
-        public Task<bool> UpdatePost(Post post)
+        public async Task<Post> ViewById(Post post)
         {
-            throw new NotImplementedException();
+            try
+            {
+                var id = await _dbContext.Post.Where(p => p.PostId == post.PostId).FirstOrDefaultAsync();
+                return id;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("");
+            }
+        }
+
+        public async Task<bool> UpdatePost(Post post)
+        {
+            try
+            {
+                var updatepost = await _dbContext.Post.Where(p => p.PostId == post.PostId).AsNoTracking().FirstOrDefaultAsync();
+
+                if (updatepost != null)
+                {
+
+
+                    var user = await _dbContext.User.Where(p => p.UserId == post.UserId).AsNoTracking().FirstOrDefaultAsync();
+                    var categori = await _dbContext.Categories.Where(p => p.CategoriesId == post.CategoryId).AsNoTracking().FirstOrDefaultAsync();
+                    if (post.Describtion != null && post.Image != null && post.PostTag != null && user != null)
+                    {
+                    
+                        post.UpdatedDate = DateTime.Now;
+                        post.PostTime = post.CreatedDate;
+                        post.CategoryId = categori.CategoriesId;
+                        post.Status = (int)CommonBlogging.Enum.Enum.Status.Active;
+                        _dbContext.Post.Update(post);
+                        var res = await _dbContext.SaveChangesAsync();
+                        if (res > 0)
+                        {
+                            return true;
+                        }
+                        else
+                        {
+                            throw new Exception("");
+                        }
+                    }
+                    else
+                    {
+                        throw new Exception("");
+                    }
+                }
+                else
+                {
+                    throw new Exception("");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("Something is Wrong !! Try Again");
+            }
         }
     }
 
@@ -108,6 +199,7 @@ namespace BloggingSystemBLLManager
         Task<bool> UpdatePost(Post post);
         Task<bool> DeletePost(Post post);
         Task<Post> GetById(Post post);
+        Task<Post> ViewById(Post post);
         List<Post>GetAll();
     }
 }

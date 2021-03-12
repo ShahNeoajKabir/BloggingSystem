@@ -1,1 +1,71 @@
-<p>delete-post works!</p>
+<div class="app-body" >
+    <main class="main d-flex align-items-center">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto">
+            <div class="card mx-4">
+              <div class="card-body p-4">
+                <form  #f="ngForm" novalidate>
+                  <h1>User Registration</h1>
+                  <p class="text-muted">Create User account</p>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Title</span>
+                    </div>
+                    <input type="text" class="form-control" disabled [(ngModel)]="objpost.Title" name="Title" placeholder="Title"  #refTitle="ngModel" id="Title" required>
+                    <div *ngIf="!refTitle.valid  && (refTitle.dirty || refTitle.touched)" class="alert alert-danger">
+                      <div [hidden]="!refTitle.errors.required">
+                        Title is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">PostTag</span>
+                    </div>
+                    <input type="text" class="form-control" disabled [(ngModel)]="objpost.PostTag" name="PostTag" placeholder="PostTag"  #refPostTag="ngModel" id="PostTag" required>
+                    <div *ngIf="!refPostTag.valid  && (refPostTag.dirty || refPostTag.touched)" class="alert alert-danger">
+                      <div [hidden]="!refPostTag.errors.required">
+                        PostTag is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">CategoriesName</span>
+                      </div>
+                    <div class="col-md-8">
+                      <select name="CategoryId" class="form-control" disabled
+                      [(ngModel)]="objpost.CategoryId">
+                    <option *ngFor="let Category of lstcategories"
+                    [value]="Category.CategoriesId">{{Category.CategoriesName}}</option>
+                    </select>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Describtion</span>
+                    </div>
+                    <textarea class="form-control" disabled  [(ngModel)]="objpost.Describtion" name="Describtion" placeholder="Write down your Blogg"  #refDescribtion="ngModel" id="Describtion" required ></textarea>
+                    <div *ngIf="!refDescribtion.valid  && (refDescribtion.dirty || refDescribtion.touched)" class="alert alert-danger">
+                      <div [hidden]="!refDescribtion.errors.required">
+                        Describtion is required
+                      </div>
+                  </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-6">
+                      <button type="button"  class="btn btn-success px-4" (click)="Delete()">Delete</button>
+                    </div>
+                    <div class="col-6 text-right">
+                      <button type="button" [routerLink]="['/Post/View']" class="btn btn-primary px-4">Back</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
