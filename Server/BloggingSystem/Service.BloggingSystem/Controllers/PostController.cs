@@ -16,9 +16,11 @@ namespace Service.BloggingSystem.Controllers
     public class PostController : ControllerBase
     {
         private readonly IPostBLLManager _postBLLManager;
-        public PostController(IPostBLLManager postBLLManager)
+        private readonly ICommentBLLManager _comment;
+        public PostController(IPostBLLManager postBLLManager , ICommentBLLManager comment)
         {
             _postBLLManager = postBLLManager;
+            _comment = comment;
         }
 
         [HttpPost]
@@ -46,6 +48,14 @@ namespace Service.BloggingSystem.Controllers
         public List<Post> GetAll()
         {
             return _postBLLManager.GetAll();
+        }
+
+
+        [HttpGet]
+        [Route("GetAllSports")]
+        public List<Post> GetAllSports()
+        {
+            return _postBLLManager.GetAllSports();
         }
 
 
@@ -110,6 +120,39 @@ namespace Service.BloggingSystem.Controllers
             try
             {
                 return Ok(await _postBLLManager.ViewById(post));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("");
+            }
+        }
+
+
+
+        [HttpPost]
+        [Route("AddComment")]
+        public async Task<ActionResult> AddComment([FromBody] Comment comment)
+        {
+            try
+            {
+                return Ok(await _comment.AddComment(comment));
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("");
+            }
+        }
+
+        [HttpGet]
+        [Route("GetComment")]
+        public List<Comment>GetComment()
+        {
+            try
+            {
+
+                return  _comment.ViewComment();
             }
             catch (Exception ex)
             {

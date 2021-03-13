@@ -6,13 +6,14 @@ import {HomePageComponent} from './home-page/home-page.component';
 import {SinglePageComponent} from './single-page/single-page.component';
 import { IndexRoutingModule } from './index-routing.module';
 import { LayoutComponent } from './layout/layout.component';
+import { SportsComponent } from './Sports/sports/sports.component';
 
 
 
 
 
 @NgModule({
-  declarations: [HomePageComponent , SinglePageComponent, LayoutComponent
+  declarations: [HomePageComponent , SinglePageComponent, LayoutComponent, SportsComponent
 ],
   imports: [
     CommonModule,

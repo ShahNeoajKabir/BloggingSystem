@@ -54,6 +54,7 @@ namespace Service.BloggingSystem
             services.AddScoped<IUserRoleBLLManager, UserRoleBLLManager>();
             services.AddScoped<ICategoriesBLLManager, CategoriesBLLManager>();
             services.AddScoped<IPostBLLManager, PostBLLManager>();
+            services.AddScoped<ICommentBLLManager, CommentBLLManager>();
             services.AddScoped<IAuthenticationManager, AuthenticationManager>();
         }
 

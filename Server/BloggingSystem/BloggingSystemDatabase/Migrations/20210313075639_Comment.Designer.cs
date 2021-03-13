@@ -4,14 +4,16 @@ using BloggingSystemDatabase;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BloggingSystemDatabase.Migrations
 {
     [DbContext(typeof(BloggingSystemDbContext))]
-    partial class BloggingSystemDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210313075639_Comment")]
+    partial class Comment
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -115,6 +115,40 @@ namespace BloggingSystemBLLManager
             }
         }
 
+        public List<Post> GetAllSports()
+        {
+            try
+            {
+
+                
+                List<Post> post = _dbContext.Post.Where(p=>p.Categories.CategoriesName=="Sports").Select(u => new Post()
+                {
+                    Categories = u.Categories,
+                    CategoryId = u.CategoryId,
+                    CreatedBy = u.CreatedBy,
+                    CreatedDate = u.CreatedDate,
+                    Describtion = u.Describtion,
+                    Image = u.Image,
+                    PostId = u.PostId,
+                    PostTag = u.PostTag,
+                    PostTime = u.PostTime,
+                    Title = u.Title,
+                    User = u.User,
+                    UserId = u.UserId,
+                    UpdatedBy = u.UpdatedBy,
+                    UpdatedDate = u.UpdatedDate,
+                    Status = u.Status,
+                    Comment = u.Comment
+                }).ToList();
+                return post;
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception("");
+            }
+        }
+
         public async Task<Post> GetById(Post post)
         {
             try
@@ -201,5 +235,6 @@ namespace BloggingSystemBLLManager
         Task<Post> GetById(Post post);
         Task<Post> ViewById(Post post);
         List<Post>GetAll();
+        List<Post> GetAllSports();
     }
 }

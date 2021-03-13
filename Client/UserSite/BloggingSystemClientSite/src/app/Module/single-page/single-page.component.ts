@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from 'src/app/Model/Post';
+import { Comment } from 'src/app/Model/Comments';
+
 import { IndexService } from 'src/app/Service/Index/index.service';
 import { CategoriesService } from 'src/app/Service/Categories/Categories.service';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,6 +15,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class SinglePageComponent implements OnInit {
   public objpost:Post=new Post();
   public edit:Post=new Post();
+  public objcomment:Comment=new Comment();
+  public lstcomment:Comment[]=new Array<Comment>();
 
   public lstcategories:any;
   public lstStatus:any;
@@ -33,7 +37,13 @@ export class SinglePageComponent implements OnInit {
       this.lstcategories=res;
       console.log(this.lstcategories);
 
-    })
+    });
+
+    this.postService.GetComment().subscribe((res:any)=>{
+      this.lstcomment=res;
+      console.log(this.lstcomment);
+
+    });
     if (this.ActivateRouter.snapshot.params['id'] !== undefined) {
 
       this.edit.PostId = this.ActivateRouter.snapshot.params['id' ];
@@ -45,6 +55,15 @@ export class SinglePageComponent implements OnInit {
       console.log(this.ActivateRouter.snapshot.params['id' ] );
 
     }
+  }
+
+  AddComment(){
+    this.objcomment.PostId=this.objpost.PostId;
+    this.postService.AddComment(this.objcomment).subscribe(res=>{
+      if(res){
+        this.router.navigate(['/View']);
+      }
+    })
   }
 
 }

@@ -8,13 +8,9 @@ namespace BloggingSystem.DTO.DTO
     {
         public int CommentId { get; set; }
         public string Describtion { get; set; }
-        public int UserId { get; set; }
+        public string UserName { get; set; }
         public int PostId { get; set; }
-        public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }
-        public string UpdatedBy { get; set; }
-        public DateTime? UpdatedDate { get; set; }
-        public int Status { get; set; }
         public  Post Post { get; set; }
     }
 }

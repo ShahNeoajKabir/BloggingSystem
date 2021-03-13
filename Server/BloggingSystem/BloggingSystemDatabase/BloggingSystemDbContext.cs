@@ -79,8 +79,6 @@ namespace BloggingSystemDatabase
                 .WithMany(m => m.Comment)
                 .HasForeignKey(f => f.PostId)
                 .OnDelete(DeleteBehavior.Cascade);
-
-                entity.Property(p => p.CreatedBy);
             });
 
             modelBuilder.Entity<Post>(entity =>
